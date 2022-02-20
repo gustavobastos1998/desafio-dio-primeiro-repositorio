@@ -1,2 +1,2 @@
-# desafio-dio-primeiro-repositorio
-Repositório utilizado para organizar o que foi estudado durante o bootcamp de java da DIO
+# Repositório para projetos
+Repositório utilizado para organizar o que foi estudado durante o bootcamp GFT Start 4 Java da DIO.
