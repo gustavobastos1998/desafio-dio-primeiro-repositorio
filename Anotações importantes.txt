@@ -1,0 +1,62 @@
+No git bash é preciso estar na pasta referida ao projeto. Basta abrir a pasta com o Git Bash.
+É só criar o repositório no github e salvar seu URL vai ser necessário para mais tarde.
+Comandos importantes :
+	{
+		git init :. inicializa um repositório vazio. 
+
+		git add <arquivo> :. adiciona o arquivo que será commitado, colocando-o na Staging Area (These files are also referred to as "untracked files." Staging area is files that are going to be a part of the next commit).
+
+		git add . :. adiciona todos os arquivos que foram modificados ou criados à staging area.
+
+		git restore --staged <file> :. remove um arquivo da staging area.
+		
+		git commit -m "comentario do commit" :. commita os arquivos que estão na staging area e permite por um comentário. 
+		
+		git branch -M "novo_nome" :. mudar o nome da branch atual.
+		
+		git status :. diz em qual branch estamos no momento, informações de alterações e criações de novos arquivos que vão ser commitados (staging area).
+		
+		git remote add origin <link_repositorio.git> :. faz a conexão do repositório local com o do github. origin é um padrão,	dependendo do projeto pode usar outro nome. Esse comando específico com o 'remote' é feito somente uma vez, já que é preciso fazer somente uma vez a conexão entre a origem e o main no github. 
+
+		git push -U origin main :. push dos commits do repositório local para o repositório remoto. É preciso fazer somente uma vez o comando com o '-U' pois acontede de maneira análoga ao comando remote. origin seria o local e main o remoto.
+
+		git push origin main :. push dos commits do repositório local para o repositório remoto.
+
+		git switch <branch-name> :. troca de uma branch a outra.
+
+		git checkout -b "nome-da-branch-nova" :. cria e troca para uma nova branch com o nome especificado. caso use com uma branch que já exista, ele só troca.
+
+		git merge <branch-name> :. faz um merge da branch atual com a branch que é o parâmetro. Importante dizer que é necessário fazer um 'git push origin main' para mandar todas as informações de merge pro github.
+
+		git clone <link-repositorio.git> :. clona um repositório na pasta atual.
+
+		git pull :. pega a todas as alterações feitas do projeto específico. Também pega arquivos novos que foram criados e comitados.
+
+		git restore --staged <file> :. remove arquivos da staging area.
+
+	}
+
+	Algoritmo :
+	{
+		git init
+		git add <file>
+		git commit -m "commit"
+		if(primeira iteração?)
+		{
+			git branch -M "main"
+			git remote add origin <link_repositorio.git>
+			git push -U origin main
+		}
+		else
+		{
+			git push origin main
+		}
+		
+		
+	}
+	
+	Existe a ferramenta fork, que é bem mais simples para fazer isso. Você só precisa apertar no botão de fork dentro do repositório.
+
+	pull request :. sugestões de alterações enviadas para o autor de algum repositório. Essas alterações são feitas no seu repositório, que você deu fork, mas o pull request pode enviar para o autor seus commits para que ele considere se algo é interessante de por.
+
+OBS IMPORTANTE: Ao criar o repositório no GitHub, é importante que não utilize a ferramente de criar o Reademe.md do GitHub, pois ao tentar fazer os pushs do repositório local para o remoto, o git levantará uma exceção dizendo que o repositório local não está atualizado, ou seja, o repositório remoto há alterações que o local não tem. Isso exige que seja feito um pull para que o local esteja atualizado ao remoto. Para evitar esse problema, basta criar o Readme.md no repositório local e dar commit push normalmente.
